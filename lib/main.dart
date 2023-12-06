@@ -1,4 +1,6 @@
 import 'package:devfest_lushi_2023/components/app_button.dart';
+import 'package:devfest_lushi_2023/custom_painter.dart';
+import 'package:devfest_lushi_2023/utils.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -43,12 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(pagePadding),
           child: Column(
             children: [
               AppButton(
                 text: 'Custom Painter',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const CustomPainterTest(),
+                    )
+                  );
+                },
               ),
               AppButton(
                 text: 'Animations',
