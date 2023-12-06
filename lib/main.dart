@@ -1,3 +1,4 @@
+import 'package:devfest_lushi_2023/animation.dart';
 import 'package:devfest_lushi_2023/components/app_button.dart';
 import 'package:devfest_lushi_2023/custom_painter.dart';
 import 'package:devfest_lushi_2023/utils.dart';
@@ -60,7 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               AppButton(
                 text: 'Animations',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AnimationTest(),
+                    )
+                  );
+                },
               ),
               AppButton(
                 text: 'Lottie',
