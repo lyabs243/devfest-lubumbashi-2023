@@ -2,6 +2,7 @@ import 'package:devfest_lushi_2023/animation.dart';
 import 'package:devfest_lushi_2023/components/app_button.dart';
 import 'package:devfest_lushi_2023/custom_painter.dart';
 import 'package:devfest_lushi_2023/lottie.dart';
+import 'package:devfest_lushi_2023/rive.dart';
 import 'package:devfest_lushi_2023/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +83,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               AppButton(
                 text: 'Rive',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const RiveTest(),
+                    )
+                  );
+                },
               ),
               AppButton(
                 text: 'All in one',
