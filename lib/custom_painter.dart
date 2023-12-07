@@ -9,11 +9,13 @@ class CustomPainterTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Custom Painter Test')),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.all(pagePadding),
-        child: const HousePaint(),
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height / 1.5,
+          padding: const EdgeInsets.all(pagePadding),
+          child: const HousePaint(),
+        ),
       ),
     );
   }
