@@ -115,6 +115,24 @@ class HousePainter extends CustomPainter {
     double doorKnobRadius = 10;
     canvas.drawCircle(Offset(size.width / 2 + doorWidth / 2 - (doorKnobRadius + 8), size.height - doorHeight / 2), doorKnobRadius, paintDoorKnob);
 
+    // write "DevFest Lubumbashi 2023" on the door
+    TextSpan span = const TextSpan(
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+      ),
+      text: 'DevFest L\'shi\n 2023',
+    );
+
+    TextPainter tp = TextPainter(
+      text: span,
+      textAlign: TextAlign.center,
+      textDirection: TextDirection.ltr,
+    );
+    tp.layout();
+    tp.paint(canvas, Offset(size.width / 2 - tp.width / 2, size.height - doorHeight / 1.5 - tp.height / 2));
+
     // the window
     final paintWindow = Paint()
       ..color = Colors.brown
