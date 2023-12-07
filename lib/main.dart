@@ -1,3 +1,4 @@
+import 'package:devfest_lushi_2023/all_in_one.dart';
 import 'package:devfest_lushi_2023/animation.dart';
 import 'package:devfest_lushi_2023/components/app_button.dart';
 import 'package:devfest_lushi_2023/custom_painter.dart';
@@ -93,7 +94,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               AppButton(
                 text: 'All in one',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AllInOneTest(),
+                    )
+                  );
+                },
               ),
             ],
           ),
