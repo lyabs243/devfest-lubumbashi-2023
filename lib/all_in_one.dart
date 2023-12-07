@@ -3,7 +3,6 @@ import 'dart:ui' as ui;
 
 import 'package:devfest_lushi_2023/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class AllInOneTest extends StatelessWidget {
@@ -35,8 +34,7 @@ class AnalogClock extends StatefulWidget {
   State<AnalogClock> createState() => _AnalogClockState();
 }
 
-class _AnalogClockState extends State<AnalogClock>
-  with SingleTickerProviderStateMixin {
+class _AnalogClockState extends State<AnalogClock> with SingleTickerProviderStateMixin {
 
   late AnimationController _controller;
   late final Animation<double> _anAnimation;
@@ -76,6 +74,12 @@ class _AnalogClockState extends State<AnalogClock>
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
 }
